@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <title>Jacaranda FM - More Music You Love</title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height, viewport-fit=cover, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="MobileOptimized" content="320">
+  <meta name="apple-mobile-web-app-title" content="Jacaranda FM - More Music You Love">
+  <meta name="apple-mobile-web-app-status-bar-style" content="translucent">
+  <meta name="format-detection" content="telephone=no">
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jacaranda FM - More Music You Love" />
+  <meta property="og:description" content="Welcome to South Africa’s biggest independent radio station. Winner of the 2015 MTN Radio Station of the Year Award, and home of More Music You Love" />
+  <meta property="og:url" content="https://jacarandafm.today/" />
+  <meta property="og:site_name" content="Jacaranda FM - More Music You Love" />
+  <meta property="og:image" content="./apple-touch-icon.png" />
+  <meta name="theme-color" content="440A4F">
+  <meta name="description" content="Welcome to South Africa’s biggest independent radio station. Winner of the 2015 MTN Radio Station of the Year Award, and home of More Music You Love" />
+  <meta name="Author" content="Goodwill Haloween Gift" />
+  <meta name="Copyright" content="Unlicence" />
+  <meta name="Keywords" content="Radio, Audio, Music, Video, Playlist, Streaming, Online, Best, Popular, Free, PWA, Apple, Android, iOS, Windows, Podcast, Event, Social" />
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="shortcut icon" href="./favicon.ico">
+  <link rel="icon" href="favicon.ico" />
+  <style>
+	html, body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		display: absolute;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		background-color: #440A4F;
+	}
+
+	.videogular-container {
+		width: 100%;
+		height: 300px;
+		margin: 0;
+		overflow: hidden;
+	}
+
+	.videogular-container.audio {
+		height: 50px;
+	}
+  </style>
+</head>
+<body>
+	
+<script>
+    var url_string=window.location.href;
+    var url = new URL(url_string);
+    var streamSelection = url.searchParams.get("selection");
+</script>
+	
+<div ng-app="myApp">
+<div ng-controller="HomeCtrl as controller" class="videogular-container">
+	<videogular vg-theme="controller.config.theme.url" class="videogular-container audio">
+		<vg-media vg-src="controller.config.sources" vg-type="audio"></vg-media>
+		<vg-controls>
+			<vg-play-pause-button></vg-play-pause-button>
+			<vg-time-display>{{ currentTime | date:'mm:ss':'+0000' }}</vg-time-display>
+			<vg-scrub-bar>
+				<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+			</vg-scrub-bar>
+			<vg-volume>
+				<vg-mute-button></vg-mute-button>
+			</vg-volume>
+		</vg-controls>
+	</videogular>
+</div>
+</div>
+  
+  <css-doodle>
+    :doodle {
+    flex: none;
+    @grid: 25x1;
+    @size: 1000px 800px;
+    overflow: hidden;
+    }
+    
+    --colors: (#75b9be,#696d7d,#d72638,#f49d37,#140f2d);
+    --color-1: @p(--colors);
+    --color-2: @P;
+    --transform: translateY(@r(2, 90)%);
+    --size: 30px;
+    transform: var(--transform) rotate(0deg);
+    transform-origin: 50% 100%;
+    
+    @random(0.5) {
+    animation: swing @r(3, 5)s ease infinite alternate both;
+    }
+    @random(0.5) {
+    animation: swingLeft @r(3, 5)s ease infinite alternate both;
+    }
+    
+    @keyframes swing {
+    0% {
+    transform: var(--transform) rotate(0deg);
+    }
+    100% {
+    transform: var(--transform) rotate(1deg);
+    }
+    }
+    
+    @keyframes swingLeft {
+    0% {
+    transform: var(--transform) rotate(0deg);
+    }
+    100% {
+    transform: var(--transform) rotate(-1deg);
+    }
+    }
+    
+    ::after {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: calc(50% - var(--size) / 2);
+    width: var(--size);
+    height: var(--size);
+    background: @p(
+    radial-gradient(@stripe(@m4(var(--color-@pn(1, 2))), transparent 29.7%)),
+    @doodle(
+    @grid: 1 / 100%;
+    ::after {
+    content: "@p(✿,❁,❀,❃,❊)";
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    font-size: 40px;
+    color: transparent;
+    background-image: radial-gradient(var(--color-1) 20%, var(--color-2) calc(20% + 0.5px));
+    -webkit-background-clip: text;
+    }
+    ),
+    @doodle(
+    @grid: 1 / 100%;
+    ::after {
+    content: "@p(🌸,🌼)";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    font-size: 28px;
+    color: transparent;
+    background-image: radial-gradient(var(--color-1) 20%, var(--color-2) calc(20% + 0.5px));
+    -webkit-background-clip: text;
+    }
+    )
+    );
+    }
+    
+    background: @doodle(
+    @grid: 1x40;
+    background: linear-gradient(90deg, @stripe(transparent, @p(--colors) 2px, transparent));
+    
+    @nth(1, 2) {
+    ::before { display: none; }
+    }
+    
+    @random(.5) {
+    ::before {
+    content: "";
+    @place: 10px center;
+    @size: 50% 100%;
+    border-radius: 0 100% 0 100%;
+    background: @p(--colors);
+    -webkit-box-reflect: @p(right, initial);
+    }
+    }
+    );
+  </css-doodle>
+  
+  <script src='https://cdn.jsdelivr.net/npm/css-doodle@0.30.3/css-doodle.min.js'></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.min.js"></script>
+  <script src="https://unpkg.com/videogular@2.1.2/dist/videogular/videogular.js"></script>
+  <script src="https://unpkg.com/videogular@2.1.2/dist/controls/vg-controls.js"></script>
+ 
+  <script>
+	  
+  var stream;
+
+  switch(streamSelection) {
+  case "1":
+    stream = "https://live.jacarandafm.com/jacarandahigh.mp3";
+    break;
+  case "2":
+    stream = "https://edge.iono.fm/xice/135_high.aac";
+    break;
+  case "3":
+    stream = "https://edge.iono.fm/xice/56_high.aac";
+    break;
+  case "4":
+    stream = "https://edge.iono.fm/xice/231_high.aac";
+    break;
+  case "5":
+    stream = "https://edge.iono.fm/xice/232_high.aac";
+    break;
+  default:
+    stream = "https://live.jacarandafm.com/jacarandahigh.mp3";
+}
+	  
+	document.addEventListener('click', function () {
+	document.querySelectorAll('css-doodle').forEach(function (o) {o.update();});
+});
+
+	document.addEventListener('touchstart', function () {
+	document.querySelectorAll('css-doodle').forEach(function (o) {o.update();});
+});
+
+'use strict';
+angular.module('myApp',
+	[
+		"ngSanitize",
+		"com.2fdevs.videogular",
+		"com.2fdevs.videogular.plugins.controls"
+	]
+)
+.controller('HomeCtrl',
+	["$sce", function ($sce) {
+		this.config = {
+			sources: [
+      {src: $sce.trustAsResourceUrl(stream), type: "audio/mpeg"}
+  ],
+			theme: {
+  url: "https://unpkg.com/videogular@2.1.2/dist/themes/default/videogular.css"
+			}
+		};
+	}]
+);
+</script>
+	  
+</body>
+</html>

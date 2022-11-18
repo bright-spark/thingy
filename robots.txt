@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /db/
+Disallow: /font-awesome/
+Disallow: /fonts/
+Disallow: /js/
+Disallow: /pages/
+Disallow: /img/
+Disallow; /icons/
+Disallow: /forms/
+Disallow: /css/
+Disallow: /splashscreens/
